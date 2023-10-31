@@ -121,11 +121,24 @@ def main():
         if choice == '1':
             manager.view_all_accounts()
         elif choice == '2':
+            account_name = input("Enter the Account Name(Ex:'Netflix'): ")
+            username = input("Enter the Username: ")
+            password = input("ENter the Password: ")
+            manager.add_account()
         elif choice == '3':
+            account_name = input("Enter the Account Name to view(Ex:'Netflix'): ")
+            manager.view_specific_account(account_name)
         elif choice == '4':
+            account_name = input("Enter the Account Name to update:")
+            new_username = input("Enter your new username: ")
+            new_password = input("Enter your new password: ")
+            manager.update_account(account_name, new_username, new_password)
         elif choice == '5':
+            account)name = input("Enter the Account Name you wish to delete: ")
+            manager.delete_account(account_name)
         elif choice == '6':
-        
+            manager.leave_application()
+            break
         else:
             print("Invalid choice. Please enter a valid option.")
 
