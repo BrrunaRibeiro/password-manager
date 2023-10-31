@@ -20,9 +20,15 @@ class PasswordManager:
     Defines main Class to run the program
     """
     def __init__(self, sheet):
+        """
+        
+        """
         self.sheet = sheet
-    
+
     def view_all_accounts(self):
+        """
+        
+        """
         try:
             data = self.sheet.get_all_values()
             for account in data:
@@ -31,6 +37,9 @@ class PasswordManager:
             print(f"Error {e}") #double check if it works
 
     def add_account(self, account_name, username, password):
+        """
+        
+        """
         try:
             self.sheet.append_table([account_name, username, password])
             print(f"{account_name}'s account added sucessfully.")
@@ -38,8 +47,11 @@ class PasswordManager:
             print(f"Error {e}") #double check if it works
     
     def view_specific_account(self, account_name):
+        """
+        
+        """
         try:
-            data = selft.sheet.get_all_values()
+            data = self.sheet.get_all_values()
             for account in data:
                 if account['account_name'] == account_name:
                     print(account)
@@ -49,6 +61,9 @@ class PasswordManager:
             print(f"Error {e}") #double check if it works
     
     def update_account(self, account_name, new_username, new_password):
+        """
+        
+        """
         try:
             data = self.sheet.get_all_values()
             for account in data:
@@ -56,7 +71,7 @@ class PasswordManager:
                     account['Username'] = new_username
                     account['Password'] = new_password
                     self.sheet.delete_rows(data.index(account) + 2)
-                    self.sheet.insert_row([account_name, new_username, new_password], data_index(account) + 2)
+                    self.sheet.insert_row([account_name, new_username, new_password], data.index(account) + 2)
                     print(f"{account_name}'s account updated successfully.")
                     return
             print(f"{account_name}'s account not found.")
@@ -64,6 +79,9 @@ class PasswordManager:
             print(f"Error: {e}") #double check if it works
     
     def delete_account(self, account_name):
+        """
+        
+        """
         try:
             data = self.sheet.get_all_values()
             for account in data:
@@ -76,13 +94,39 @@ class PasswordManager:
             print(f"Error: {e}")
      
     def leave_application(self):
+        """
+        
+        """
         print("Thank you for using Password Manager.")
 
 def main():
     """
-    Calls the main Class with the SHEET variable as a argument.
+    Calls the main Class passing the SHEET variable as a argument.
+    Prints the necessary information to the User on How to use the program.
+    Validation for empty or incorrect input.
     """
     manager = PasswordManager(SHEET)
     
+    while True:
+        print("\nPassword Manager Options:")
+        print("1. View all saved passwords")
+        print("2. Add a new account")
+        print("3. View an specific account' details")
+        print("4. Update a saved password")
+        print("5. Delete a account")
+        print("6. Leave the application")
+
+        choice = input("Enter the number corresponded to your choice(Ex: '2'): ")
+
+        if choice == '1':
+            manager.view_all_accounts()
+        elif choice == '2':
+        elif choice == '3':
+        elif choice == '4':
+        elif choice == '5':
+        elif choice == '6':
+        
+        else:
+            print("Invalid choice. Please enter a valid option.")
 
 main()
