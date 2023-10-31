@@ -108,15 +108,15 @@ def main():
     manager = PasswordManager(SHEET)
     
     while True:
-        print("\nPassword Manager Options:")
-        print("1. View all saved passwords")
+        print("\nPassword Manager Options: ")
+        print("\n1. View all saved passwords")
         print("2. Add a new account")
         print("3. View an specific account' details")
         print("4. Update a saved password")
         print("5. Delete a account")
         print("6. Leave the application")
 
-        choice = input("Enter the number corresponded to your choice(Ex: '2'): ")
+        choice = input("\nEnter your choice(Ex:'2'): ")
 
         if choice == '1':
             manager.view_all_accounts()
@@ -124,7 +124,7 @@ def main():
             account_name = input("Enter the Account Name(Ex:'Netflix'): ")
             username = input("Enter the Username: ")
             password = input("ENter the Password: ")
-            manager.add_account()
+            manager.add_account(account_name, username, password)
         elif choice == '3':
             account_name = input("Enter the Account Name to view(Ex:'Netflix'): ")
             manager.view_specific_account(account_name)
@@ -134,7 +134,7 @@ def main():
             new_password = input("Enter your new password: ")
             manager.update_account(account_name, new_username, new_password)
         elif choice == '5':
-            account)name = input("Enter the Account Name you wish to delete: ")
+            account_name = input("Enter the Account Name you wish to delete: ")
             manager.delete_account(account_name)
         elif choice == '6':
             manager.leave_application()
