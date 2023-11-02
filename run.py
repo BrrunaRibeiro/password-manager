@@ -21,37 +21,47 @@ class PasswordManager:
     """
     def __init__(self, sheet):
         """
-        
+        __init__ method initializes the PasswordManager using sheet as a parameter.
         """
         self.sheet = sheet
 
     def view_all_accounts(self):
         """
-        
+        Iterates over the values returned from the get_all_values() method.
+        Prints all saved accounts as a Dictionary.
         """
         try:
-            data = self.sheet.get_all_values()
+            data = self.sheet.get_all_records()
             for account in data:
                 print(account)
-        except Exception as e:
-            print(f"Error {e}") #double check if it works
-
+                break
+            else:
+                raise ImportError("No accounts saved yet.")
+        except ImportError as e:
+            print(f"Error {e}. To add a new account enter '2' in the main menu' options.")
+            return False
     def add_account(self, account_name, username, password):
         """
-        
+        Inputs are stored in the variable data.
+        append_rows() gspread's method saves the data to the worksheet.
+        Print statements inform the user if it was sucessfully added or why not.
         """
         try:
             data = [[account_name, username, password]]
             self.sheet.append_rows(data)
             print(f"{account_name}'s account added sucessfully.")
-        except Exception as e:
-            print(f"Error {e}") #double check if it works
-
+            return True
+            raise ValueError("Unable to add account.")
+        except ValueError as e:
+            print(f"Error: {e}. Please try again.")
+            return False
     def view_specific_account(self, account_name):
         """
         Iterate's through the list of dictionaries returned by get_all_records().
+        The strip() function removes leading and trailing spaces from the value provided.
         Finds the account name and prints the dictionary containg the account details.
-        Prints an
+        Print statements prints the requested account's information to the terminal.
+        Except raises the error in case the account cannot be found.
         """
         try:
             data = self.sheet.get_all_records()
@@ -59,36 +69,40 @@ class PasswordManager:
             for account in data:
                 if 'Account Name' in account and account["Account Name"].strip() == account_name:
                     print(account)
-                    return
-            print(f"{account_name}'s account not found.")
-        except Exception as e:
-            print(f"Error {e}") #double check if it works
-
+                    return True
+            raise ValueError(f"'{account_name}'s' account not found.")
+        except ValueError as e:
+            print(f"Error: {e}. Did you meant {account_name} with capital letter instead? The program is case sensitive.")
+            return False
+        
     def update_account(self, account_name, new_username, new_password):
         """
         Iterate's through the list of dictionaries returned by get_all_records().
         The strip() method is used to help with typos and possible whitespaces issues.
         First the Account is deleted and then added again with the new_username and new_password.
-        
+        Print statements inform the user if it was sucessfully updated or the reason why not.
         """
         try:
             data = self.sheet.get_all_records()
-            #account_name = account_name.strip()
+            account_name = account_name.strip()
             for account in data:
                 if account['Account Name'] == account_name:
                     self.sheet.delete_rows(data.index(account) + 2)
-
-            data = [[account_name, new_username, new_password]]
-            self.sheet.append_rows(data)
-            print(f"{account_name}'s account updated successfully.")
-            return
-            print(f"{account_name}'s account not found.")
-        except Exception as e:
-            print(f"Error: {e}") #double check if it works
-    
+                    data = [[account_name, new_username, new_password]]
+                    self.sheet.append_rows(data)
+                    print(f"{account_name}'s account updated successfully.")
+                    return True
+            raise ValueError(f"'{account_name}'s' account not found.")
+        except ValueError as e:
+            print(f"Error: {e}. Did you meant {account_name} with capital letter instead The program is case sensitive.")
+            return False
+        
     def delete_account(self, account_name):
         """
-        
+        Iterates through the results from get_all_records() and finds the account_name provided.
+        If there is match, the delete_rows() method will delete the account's information.
+        Print statement informs the user if it was sucessfully deleted.
+        If no matches, it raises ValueError and prints this information to the user.
         """
         try:
             data = self.sheet.get_all_records()
@@ -97,15 +111,16 @@ class PasswordManager:
                 if account['Account Name'] == account_name:
                     self.sheet.delete_rows(data.index(account) + 2)
                     print(f"{account_name}'s account has been deleted.")
-                    return
-            print(f"{account_name}'s account not found.")
-        except Exception as e:
-            print(f"Error: {e}")
+                    return True
+            raise ValueError(f"{account_name}'s account not found.")
+        except ValueError as e:
+            print(f"Error: {e}. Did you meant '{account_name}' with capital letter instead?")
      
     def leave_application(self):
         """
-        
+        Exits the applicatio and prints a goodbye message to the terminal.
         """
+        #Add code to exit the application.
         print("Thank you for using Password Manager.")
 
 def main():
@@ -115,7 +130,6 @@ def main():
     Validation for empty or incorrect input.
     """
     manager = PasswordManager(SHEET)
-    print("Welcome to Password Manager")
 
     while True:
         print("\nPassword Manager Options: ")
@@ -156,4 +170,6 @@ def main():
             print(f"Invalid choice: {e}. Please enter a valid option.")
             return False
             #Must ask options again..
+            
+print("Welcome to Password Manager")
 main()
