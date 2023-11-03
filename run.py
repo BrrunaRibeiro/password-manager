@@ -42,6 +42,7 @@ class PasswordManager:
         """
         try:
             data = self.sheet.get_all_records()
+            print("Here are all your saved account details: \n")
             for account in data:
                 print(account)
         except ImportError:  # perhaps another type of Error?
@@ -136,6 +137,9 @@ class PasswordManager:
     def leave_application(self):
         """Print a goodbye message and exits the application."""
         print("\nThank you for using Password Manager.\n")
+        print("All your account's details are saved.")
+        print("You may close this application.\n")
+        print("Goodbye!\n")
         exit(self)
 
 
@@ -150,7 +154,7 @@ def main():
     manager = PasswordManager(SHEET)
     while True:
         print("\nPassword Manager Options: ")
-        print("\n1. View all saved passwords")
+        print("\n1. View all saved accounts")
         print("2. Add a new account")
         print("3. View an specific account' details")
         print("4. Update a saved account")
