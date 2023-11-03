@@ -29,36 +29,39 @@ class PasswordManager:
         """
         Iterates over the values returned from the get_all_records() method.
         Prints all saved accounts as a Dictionary.
+        If there aren't any saved accounts, raises exception and prints error message.
         """
         try:
             data = self.sheet.get_all_records()
             for account in data:
                 print(account)
-        except ImportError:
+        except ImportError: #perhaps another type of Error?
             print("\nError: No accounts found.")
             return False
         
     def add_account(self, account_name, username, password):
         """
         Inputs are stored in the variable data.
-        append_rows() gspread's method saves the data to the worksheet.
-        Print statements inform the user if it was sucessfully added or why not.
+        append_rows() gspread's method adds the data to the worksheet in a new row.
+        Print statement informs the user if it was sucessfully added.
+        Exception prints the error message if the account cannot be added.
         """
         try:
             data = [[account_name, username, password]]
             self.sheet.append_rows(data)
             print(f"\n{account_name}'s account added sucessfully.")
             return True
-        except ValueError:
-            print("\nError. Unable to add account. Please try again.")
+        except ValueError: #Perhaps use another type of Error?
+            print("\nError: Unable to add account. Please try again.")
             return False
         
     def view_specific_account(self, account_name):
         """
         Iterate's through the list of dictionaries returned by get_all_records().
         The strip() function removes leading and trailing spaces from the value provided.
-        Finds the account name and prints the dictionary containg the account details.
-        Except raises the error in case the account cannot be found.
+        Finds the matching Account Name and prints the dictionary containg the account details.
+        Except statement prints the raised error in case the account cannot be found.
+        The print statement includes a suggetion to try to use capital letter.
         """
         try:
             data = self.sheet.get_all_records()
@@ -76,7 +79,7 @@ class PasswordManager:
         """
         Iterate's through the list of dictionaries returned by get_all_records().
         The strip() function removes leading and trailing spaces from the value provided.
-        First the Account is deleted and then added again with the new_username and new_password.
+        First, the Account is deleted, and then added again with the new_username and new_password.
         Print statement informs the user if it was sucessfully updated,
         Or raises a ValueError if the account is not found and prints it to the user.
         """
@@ -101,6 +104,7 @@ class PasswordManager:
         If there is match, the delete_rows() method will delete the account's information.
         Print statement informs the user if the account was sucessfully deleted.
         If no matches, it raises ValueError and prints this information to the user.
+        Except statement prints the error message and suggests to use capital letter instead.
         """
         try:
             data = self.sheet.get_all_records()
@@ -127,7 +131,6 @@ def main():
     Prints the necessary information to the User on How to use the program.
     Validation for empty or incorrect input.
     """
-    #pass
     manager = PasswordManager(SHEET)
     
     while True:
@@ -167,8 +170,6 @@ def main():
                 raise ValueError(f"Valid Options: '1','2','3','4','5','6'. You provided '{choice}'")
         except ValueError as e:
             print(f"Invalid choice: {e}. Please enter a valid option.")
-            #pass
-            
-            
+
 print("Welcome to Password Manager")
 main()
