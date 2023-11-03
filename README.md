@@ -13,3 +13,6 @@ As an alternative, the account to be Updated is first deleted and then added wit
 ## Known bugs
 * If you request to see an Specific account that was added twice, it only returns the first found row in the sheet.
 
+## Testing
+* Python 3 Style Checker for beginners
+This style checker will check your code against the main conventions recommended for Python in PEP 8 (Style Guide for Python Code) and PEP 257 (Docstring Conventions). Fine tuning your code to pass these common conventions makes it easy for others to read your Python code.
