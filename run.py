@@ -45,7 +45,7 @@ class PasswordManager:
             print("Here are all your saved account details: \n")
             for account in data:
                 print(account)
-        except ImportError:  # perhaps another type of Error?
+        except ImportError:
             print("\nError: No accounts found.")
             return False
 
@@ -62,7 +62,7 @@ class PasswordManager:
             self.sheet.append_rows(data)
             print(f"\n{account_name}'s account added sucessfully.")
             return True
-        except ValueError:  # Perhaps use another type of Error?
+        except ValueError:
             print("\nError: Unable to add account. Please try again.")
             return False
 

@@ -21,6 +21,8 @@ This program stores all kinds of login details, any type account and any type of
   - Update Login Details.
   - Delete Login Details.
 
+![Main Menu](readme-images/termina-main-menu.png)
+
 ## Libraries 
 
 - Gspred.
@@ -58,63 +60,63 @@ See below for manual testing with screenshots:
 
   - The main menu greets the user and presents options to continue to use the program. It works as expected.
 
-  ![Main Menu](readme-images\termina-main-menu.png)
+  ![Main Menu](readme-images/termina-main-menu.png)
 
 - __Option 1: View all saved accounts__
 
   - The funtion works as expected
 
-  ![View all saved accounts](readme-images\view-all-saved-accounts.png)
+  ![View all saved accounts](readme-images/view-all-saved-accounts.png)
 
   - Wrong input handling:
 
-  ![View all saved accounts ERROR](readme-images\view-all-saved-account-error.png)
+  ![View all saved accounts ERROR](readme-images/view-all-saved-account-error.png)
   
 - __Option 2: Add new account__
 
   - The funtion works as expected
 
-  ![Add new account](readme-images\add-new-account.png)
+  ![Add new account](readme-images/add-new-account.png)
 
   - Wrong input handling:
 
-  ![Add new account ERROR](readme-images\add-new-account-error.png)
+  ![Add new account ERROR](readme-images/add-new-account-error.png)
 
 - __Option 3: View specific account__
 
   - The funtion works as expected
 
-  ![View specific acccount](readme-images\view-specific-account.png)
+  ![View specific acccount](readme-images/view-specific-account.png)
 
   - Wrong input handling:
 
-  ![View specific account ERROR](readme-images\view-specific-account-error.png)
+  ![View specific account ERROR](readme-images/view-specific-account-error.png)
   
-- __Option 4: Add new account__
+- __Option 4: Update account__
 
   - The funtion works as expected
 
-  ![Update account](readme-images\update-account.png)
+  ![Update account](readme-images/update-account.png)
 
   - Wrong input handling:
 
-  ![Update account ERROR](readme-images\update-account-error.png)
+  ![Update account ERROR](readme-images/update-account-error.png)
 
 - __Option 5: Delete an account__
 
   - The funtion works as expected
 
-  ![Delete account](readme-images\delete-an-account.png)
+  ![Delete account](readme-images/delete-an-account.png)
 
   - Wrong input handling:
 
-  ![Delete account ERROR](readme-images\delete-an-account-error.png)
+  ![Delete account ERROR](readme-images/delete-an-account-error.png)
 
 - __Option 6: Exit Application__
 
   - The funtion works as expected
 
-  ![Exit Application](readme-images\exit-application.png)
+  ![Exit Application](readme-images/exit-application.png)
 
 
 ## Validator Testing and Other Tests
