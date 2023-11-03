@@ -133,7 +133,7 @@ See below for how the program responds to incorrect or empty inputs:
 
   - Wrong input handling:
 
-  ![Delete account ERROR](readme-images/delete-an-account-error.png)
+  ![Delete account ERROR](readme-images/terminal-delete-an-account-error.png)
 
 
 
@@ -144,6 +144,7 @@ See below for how the program responds to incorrect or empty inputs:
 
 - [Python 3 Style Checker for beginners](https://www.codewof.co.nz/style/python3/) - NO ERRORS FOUND
   -This style checker will check your code against the main conventions recommended for Python in PEP 8 (Style Guide for Python Code) and PEP 257 (Docstring Conventions). Fine tuning your code to pass these common conventions makes it easy for others to read your Python code.
+  ![Python 3 Style Checker](readme-images/passed-pep8-pep257.png)
 
 
 ## Fixed bugs
