@@ -8,7 +8,9 @@ It provides a way to see, save, update and retrieve multiple login details.
 
 The details are saved in a Google Sheet file, which is connected to the application with an API.
 
-Many of us have swapped between main password managers' providers, and have found issues when transfering data to a new password manager. This application is valuable to the user as it stores all kinds of login details, any type account and any type of passwords. Regardless of the Account provider or machinery brands(Apple/Samsung/Google,etc..), your Account and Login details will be easily stored in a Google Sheet.
+Many of us have swapped between main password managers' providers, and have found issues when transfering data to a new password manager. This application is valuable to the user as it stores all kinds of login details, any type account and any type of passwords. 
+
+Regardless of the Account provider or machinery brands(Apple/Samsung/Google,etc..), your Account and Login details will be easily stored in a Google Sheet.
 
 ## Features
 
@@ -22,37 +24,37 @@ Many of us have swapped between main password managers' providers, and have foun
 
   - This feature lets the user retrieve all the stored accounts from the Google Sheet file.
 
-  ![View all saved accounts](readme-images/view-all-accounts.png)
+  ![View all saved accounts](readme-images/terminal-view-all-accounts.png)
   
 - __Option 2: Add new account__
 
   - This feature lets the user add a new account with its associated details(username and password) to the Google Sheet.
 
-  ![Add new account](readme-images/add-new-account.png)
+  ![Add new account](readme-images/terminal-add-new-account.png)
 
 - __Option 3: View specific account__
 
   - This feature allows the user to retrieve an __specific account__ based on the Account Name inputted.
 
-  ![View specific acccount](readme-images/view-specific-account.png)
+  ![View specific acccount](readme-images/terminal-view-specific-account.png)
   
 - __Option 4: Update account__
 
   - This feature allows the user that has new Login details, to updated the Google Sheet file with the newest Username and Password.
 
-  ![Update account](readme-images/update-account.png)
+  ![Update account](readme-images/terminal-update-account.png)
 
 - __Option 5: Delete an account__
 
   - This feature allows the user to permanently delete the account and saved details, based on the Account Name inputted.
 
-  ![Delete account](readme-images/delete-an-account.png)
+  ![Delete account](readme-images/terminal-delete-an-account.png)
 
 - __Option 6: Exit Application__
 
   - This feature thanks the user for using the program, reasures to the user that the account details are saved, and the application will now be terminate. It says Goodbye.
 
-  ![Exit Application](readme-images/exit-application.png)
+  ![Exit Application](readme-images/terminal-exit-application.png)
 
 ## Libraries 
 
@@ -142,10 +144,10 @@ See below for how the program responds to invalid or empty inputs:
 
 - [CI Python Linter](https://pep8ci.herokuapp.com/) - NO ERRORS FOUND
 
-  ![CI Python Linter](readme-images/ci-python-linter.png)
+  ![CI Python Linter](readme-images/ci-python-linter-passed-pep8.png)
 
 - [Python 3 Style Checker for beginners](https://www.codewof.co.nz/style/python3/) - NO ERRORS FOUND
-  -This style checker will check your code against the main conventions recommended for Python in PEP 8 (Style Guide for Python Code) and PEP 257 (Docstring Conventions). Fine tuning your code to pass these common conventions makes it easy for others to read your Python code.
+  - This style checker will check your code against the main conventions recommended for Python in PEP 8 (Style Guide for Python Code) and PEP 257 (Docstring Conventions). Fine tuning your code to pass these common conventions makes it easy for others to read your Python code.
 
   ![Python 3 Style Checker](readme-images/passed-pep8-pep257.png)
 
