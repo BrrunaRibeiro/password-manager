@@ -158,7 +158,8 @@ See below for how the program responds to invalid or empty inputs:
 ``` UserWarning: [Deprecated][in version 6.0.0]: method signature will change to: 'Worksheet.update(value = [[]], range_name=)' arguments 'range_name' and 'values' will swap, values will be mandatory of type: 'list(list(...))'  warnings.warn( ```
 
 I seached for a solution both online and with Code Institute Tutors, they advised to look for an alternative code as there is an issue with the method signature from certain versions of the gspread library.
-SOLUTION: As an alternative, the account to be Updated is first deleted and then added with the newest data. The code now behaves as expected.
+
+SOLUTION: As an alternative, the account to be updated is first DELETED and then ADDED with the newest data. The code now behaves as expected.
 
 ## Unfixed bugs
 
