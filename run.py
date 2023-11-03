@@ -1,7 +1,11 @@
-#Imports the Gspred library to access all of it's  functions, class or methods within it.
+"""
+Imports the Gspred library to access all of it's  functions, class or methods within it.
+"""
 import gspread
 
-#Imports Credentials class(part of the service_account function from the Google Auth library).
+"""
+Imports Credentials class(part of the service_account function from the Google Auth library).
+"""
 from google.oauth2.service_account import Credentials
 
 SCOPE = [
@@ -14,6 +18,7 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("password-manager-file").sheet1
+
 
 class PasswordManager:
     """
@@ -39,6 +44,7 @@ class PasswordManager:
             print("\nError: No accounts found.")
             return False
         
+
     def add_account(self, account_name, username, password):
         """
         Inputs are stored in the variable data.
@@ -54,7 +60,8 @@ class PasswordManager:
         except ValueError: #Perhaps use another type of Error?
             print("\nError: Unable to add account. Please try again.")
             return False
-        
+
+
     def view_specific_account(self, account_name):
         """
         Iterate's through the list of dictionaries returned by get_all_records().
@@ -75,6 +82,7 @@ class PasswordManager:
             print(f"\nError: {e}. Did you meant {account_name} with capital letter instead?")
             return False
         
+
     def update_account(self, account_name, new_username, new_password):
         """
         Iterate's through the list of dictionaries returned by get_all_records().
@@ -98,6 +106,7 @@ class PasswordManager:
             print(f"\nError: {e}. Did you meant {account_name} with capital letter instead?\n")
             return False
         
+
     def delete_account(self, account_name):
         """
         Iterates through the results from get_all_records() and finds the account_name provided.
@@ -124,6 +133,7 @@ class PasswordManager:
         """
         print("\nThank you for using Password Manager.\n")
         exit(self)
+
 
 def main():
     """
@@ -170,6 +180,7 @@ def main():
                 raise ValueError(f"Valid Options: '1','2','3','4','5','6'. You provided '{choice}'")
         except ValueError as e:
             print(f"Invalid choice: {e}. Please enter a valid option.")
+
 
 print("Welcome to Password Manager")
 main()
