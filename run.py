@@ -27,7 +27,7 @@ class PasswordManager:
 
     def view_all_accounts(self):
         """
-        Iterates over the values returned from the get_all_values() method.
+        Iterates over the values returned from the get_all_records() method.
         Prints all saved accounts as a Dictionary.
         """
         try:
@@ -120,8 +120,9 @@ class PasswordManager:
         """
         Exits the applicatio and prints a goodbye message to the terminal.
         """
-        #Add code to exit the application.
         print("Thank you for using Password Manager.")
+        exit(self)
+        
 
 def main():
     """
