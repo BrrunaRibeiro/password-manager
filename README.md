@@ -2,15 +2,15 @@
 
 ![Main Menu](readme-images/terminal-main-menu.png)
 
-Password Manager is a command line based program created with Python.
+Password Manager is a Object-Oriented, command line based program created with Python.
 
 It provides a way to see, save, update and retrieve multiple login details.
 
-The details are saved in a Google Sheet file, which is connected to the application with an API.
+The details are saved in a Google Sheets file, which is connected to the application with an API.
 
-Many of us have swapped between main password managers' providers, and have found issues when transfering data to a new password manager. This application is valuable to the user as it stores all kinds of login details, any type account and any type of passwords. 
+Many of us have swapped between main password managers' providers, or brand devices and sadly had issues when transfering data to a new password manager. This application is valuable to the user as it stores all kinds of login details, any type account and any type of passwords. 
 
-Regardless of the Account provider or machinery brands(Apple/Samsung/Google,etc..), your Account and Login details will be easily stored in a Google Sheet.
+Regardless of the Account provider or device's brands(Apple/Samsung/Windows, Google,etc..), your account and login details will be easily stored in a Google Sheets file.
 
 ## Features
 
