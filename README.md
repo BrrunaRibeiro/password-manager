@@ -29,10 +29,13 @@ This program stores all kinds of login details, any type account and any type of
 ## Deployment
 
 - The application was deployed to Heroku, steps are as follows:
-  - 
-  - 
-  - 
-  - 
+  - Prepare requirements.txt file using pip freeze > requires.txt.
+  - Create a new app in Heroku.
+  - Change the settings:
+    - Add sensitive information to Config Vars.
+    - Add necessary BuildPacks.
+  - Go to deploy and connect to Github account.
+  - Select deployment (Automatic or Manual) We used Automatic for this project.
 
 The live deployed project can be found here - 
 
