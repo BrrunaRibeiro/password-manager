@@ -1,6 +1,6 @@
 # Password Manager
 
-[]()
+![Main Menu](readme-images/terminal-main-menu.png)
 
 Password Manager is a command line based program created with Python.
 
@@ -76,9 +76,6 @@ This program stores all kinds of login details, any type account and any type of
 
   ![Exit Application](readme-images/exit-application.png)
 
-
-![Main Menu](readme-images/termina-main-menu.png)
-
 ## Libraries 
 
 - Gspred.
@@ -106,16 +103,11 @@ The live deployed project can be found here -
 - The content was created by Bruna Ribeiro, myself.
 - The Login details are fictitious.
 - The code not teached in Code instutite that was used in this project was taken and learned from [StackOverflow](https://stackoverflow.com).
-- Flow-chart was made with [Lucid App]()
+- Flow-chart was made with [Lucid App](https://www.lucidchart.com)
 
 ## Testing
 
 See below for how the program responds to incorrect or empty inputs:
-- __Main Menu__
-
-  - The main menu greets the user and presents options to continue to use the program.
-
-  ![Main Menu](readme-images/termina-main-menu.png)
 
 - __Option 1: View all saved accounts__
 
