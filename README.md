@@ -18,17 +18,13 @@ This program stores all kinds of login details, any type account and any type of
 
   - The main menu greets the user and presents options to continue to use the program.
 
-  ![Main Menu](readme-images/termina-main-menu.png)
+  ![Main Menu](readme-images/terminal-main-menu.png)
 
 - __Option 1: View all saved accounts__
 
   - This feature lets the user retrieve all the stored accounts from the Google Sheet file.
 
-  ![View all saved accounts](readme-images/view-all-saved-accounts.png)
-
-  - Wrong input handling:
-
-  ![View all saved accounts ERROR](readme-images/view-all-saved-account-error.png)
+  ![View all saved accounts](readme-images/view-all-accounts.png)
   
 - __Option 2: Add new account__
 
@@ -111,27 +107,27 @@ See below for how the program responds to incorrect or empty inputs:
 
 - __Option 1: View all saved accounts__
 
-  - Wrong input handling:
-
-  ![View all saved accounts ERROR](readme-images/view-all-saved-account-error.png)
+  - No inputs are needed, however if no accounts are yet saved, the program will print an error as per code below:
+  ```print("\nError: No accounts found.")```
+  - Program will return to the main menu where you have the option to add a new account.
   
 - __Option 2: Add new account__
 
-  - Wrong input handling:
-
-  ![Add new account ERROR](readme-images/add-new-account-error.png)
+  - No inputs are needed, but if the program is unable to add a new account, the program will print an error as per code below:
+  ```print("\nError: Unable to add account. Please try again.")```
+  - Program will return to the main menu where you have the option to try to add a new account again.
 
 - __Option 3: View specific account__
 
   - Wrong input handling:
 
-  ![View specific account ERROR](readme-images/view-specific-account-error.png)
+  ![View specific account ERROR](readme-images/terminal-view-specific-account-error.png)
   
 - __Option 4: Update account__
 
   - Wrong input handling:
 
-  ![Update account ERROR](readme-images/update-account-error.png)
+  ![Update account ERROR](readme-images/terminal-update-account-error.png)
 
 - __Option 5: Delete an account__
 
