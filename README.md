@@ -8,9 +8,7 @@ It provides a way to see, save, update and retrieve multiple login details.
 
 The details are saved in a Google Sheet file, which is connected to the application with an API.
 
-Many of of have swapped between main password managers providers, and have found issues when transfering data to a new password manager.
-
-This program stores all kinds of login details, any type account and any type of passwords.
+Many of us have swapped between main password managers' providers, and have found issues when transfering data to a new password manager. This application is valuable to the user as it stores all kinds of login details, any type account and any type of passwords. Regardless of the Account provider or machinery brands(Apple/Samsung/Google,etc..), your Account and Login details will be easily stored in a Google Sheet.
 
 ## Features
 
@@ -28,47 +26,31 @@ This program stores all kinds of login details, any type account and any type of
   
 - __Option 2: Add new account__
 
-  - The funtion works as expected
+  - This feature lets the user add a new account with its associated details(username and password) to the Google Sheet.
 
   ![Add new account](readme-images/add-new-account.png)
 
-  - Wrong input handling:
-
-  ![Add new account ERROR](readme-images/add-new-account-error.png)
-
 - __Option 3: View specific account__
 
-  - The funtion works as expected
+  - This feature allows the user to retrieve an __specific account__ based on the Account Name inputted.
 
   ![View specific acccount](readme-images/view-specific-account.png)
-
-  - Wrong input handling:
-
-  ![View specific account ERROR](readme-images/view-specific-account-error.png)
   
 - __Option 4: Update account__
 
-  - The funtion works as expected
+  - This feature allows the user that has new Login details, to updated the Google Sheet file with the newest Username and Password.
 
   ![Update account](readme-images/update-account.png)
 
-  - Wrong input handling:
-
-  ![Update account ERROR](readme-images/update-account-error.png)
-
 - __Option 5: Delete an account__
 
-  - The funtion works as expected
+  - This feature allows the user to permanently delete the account and saved details, based on the Account Name inputted.
 
   ![Delete account](readme-images/delete-an-account.png)
 
-  - Wrong input handling:
-
-  ![Delete account ERROR](readme-images/delete-an-account-error.png)
-
 - __Option 6: Exit Application__
 
-  - The funtion works as expected
+  - This feature thanks the user for using the program, reasures to the user that the account details are saved, and the application will now be terminate. It says Goodbye.
 
   ![Exit Application](readme-images/exit-application.png)
 
@@ -80,19 +62,22 @@ This program stores all kinds of login details, any type account and any type of
 ## Deployment
 
 - The application was deployed to Heroku, steps are as follows:
-  - Prepare requirements.txt file using pip freeze > requires.txt.
+  - Prepare requirements.txt file using pip freeze > requirements.txt.
   - Create a new app in Heroku.
   - Change the settings:
     - Add sensitive information to Config Vars.
     - Add necessary BuildPacks.
   - Go to deploy and connect to Github account.
-  - Select deployment (Automatic or Manual) We used Automatic for this project.
+  - Select deployment (Automatic or Manual). We used Automatic for this project.
 
-The live deployed project can be found here - 
+__The live deployed project can be found here - []()__
 
 ## Creation process
 
-![Flow Chart](readme-images/flow-chart-passwordmanager.png)
+  - I created this app as I swapped many times between Apple/Windows&Samsund devices, and most of the times I lost Login details while doing so. I wanted to create an app that stores the Login/Account details in a file, and runs in the command line.
+  - A flowchart was made to design the main framework of the project, as per below:
+
+  ![Flow Chart](readme-images/flow-chart-passwordmanager.png)
 
 ## Content
 
@@ -119,33 +104,36 @@ See below for how the program responds to incorrect or empty inputs:
 
 - __Option 3: View specific account__
 
-  - Wrong input handling:
+  - Program will print the error and suggest to try with capital letters. It then returns to the main menu where you have the options and can input a valid Account Name.
+  - Invalid input handling:
 
   ![View specific account ERROR](readme-images/terminal-view-specific-account-error.png)
   
 - __Option 4: Update account__
 
-  - Wrong input handling:
+  - Program will print the error and suggest to try with capital letters. It then returns to the main menu where you have the options and can input a valid Account Name.
+  - Invalid input handling:
 
   ![Update account ERROR](readme-images/terminal-update-account-error.png)
 
 - __Option 5: Delete an account__
 
-  - Wrong input handling:
+  - Program will print the error and suggest to try with capital letters. It then returns to the main menu where you have the options and can input a valid Account Name.
+  - Invalid input handling:
 
-  ![Delete account ERROR](readme-images/terminal-delete-an-account-error.png)
-
+  ![Delete account ERROR](readme-images/terminal-delete-account-error.png)
 
 
 ## Validator Testing and Other Tests
 
 - [CI Python Linter](https://pep8ci.herokuapp.com/) - NO ERRORS FOUND
+
   ![CI Python Linter](readme-images/ci-python-linter.png)
 
 - [Python 3 Style Checker for beginners](https://www.codewof.co.nz/style/python3/) - NO ERRORS FOUND
   -This style checker will check your code against the main conventions recommended for Python in PEP 8 (Style Guide for Python Code) and PEP 257 (Docstring Conventions). Fine tuning your code to pass these common conventions makes it easy for others to read your Python code.
-  ![Python 3 Style Checker](readme-images/passed-pep8-pep257.png)
 
+  ![Python 3 Style Checker](readme-images/passed-pep8-pep257.png)
 
 ## Fixed bugs
 
@@ -153,8 +141,8 @@ See below for how the program responds to incorrect or empty inputs:
 
 ``` UserWarning: [Deprecated][in version 6.0.0]: method signature will change to: 'Worksheet.update(value = [[]], range_name=)' arguments 'range_name' and 'values' will swap, values will be mandatory of type: 'list(list(...))'  warnings.warn( ```
 
-  - I seached for a solution both online and with Code Institute Tutors, they advised to look for an alternative code as there is an issue with the method signature from certain versions of the gspread library.
-As an alternative, the account to be Updated is first deleted and then added with the newest data.
+I seached for a solution both online and with Code Institute Tutors, they advised to look for an alternative code as there is an issue with the method signature from certain versions of the gspread library.
+SOLUTION: As an alternative, the account to be Updated is first deleted and then added with the newest data. The code now behaves as expected.
 
 ## Unfixed bugs
 
@@ -162,5 +150,5 @@ As an alternative, the account to be Updated is first deleted and then added wit
 
 ## Features to add in the future
 
-- New password generator.
+- New random password generation.
 - Import Colorama for a better view and usage.
