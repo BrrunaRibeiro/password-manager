@@ -88,7 +88,21 @@ __The live deployed project can be found here - []()__
 
 ## Testing
 
-See below for how the program responds to incorrect or empty inputs:
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Running the program | Program starts and Greets the User | Intro screen presented | Works as expected |
+| Program options | User presented with the options | Print the options| Works as expected |
+| Input options | User prompted to type a choice | Inout for choices is presented | Works as expected |
+| Choice of options | User enters the option | Extra information is requested from the user | Works as expected |
+| Inputs: Account Name | User inputs a Account Name to access, delete or modify | Next input is presented | Works as expected |
+| Inputs: Account Name | User inputs an invalid Account name or empty | Error message is presented | Works as expected |
+| Inputs: Username | User is inputs(new) Username | Next input is presented | Works as expected |
+| Inputs: Password | User inputs (new) Password | Prints succesful message | Works as expected |
+| Errors/Exceptions | User is informed in case program does not perform as expected | Errors and possible solutions are presented | Works as expected |
+
+### Invalid/Empty Inputs & Error Handling:
+
+See below for how the program responds to invalid or empty inputs:
 
 - __Option 1: View all saved accounts__
 
@@ -152,3 +166,4 @@ SOLUTION: As an alternative, the account to be Updated is first deleted and then
 
 - New random password generation.
 - Import Colorama for a better view and usage.
+- Security features such as Master Password or Multi-factor Authentication to access the program.
