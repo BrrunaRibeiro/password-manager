@@ -48,7 +48,7 @@ Regardless of the Account provider or machinery brands(Apple/Samsung/Google,etc.
 
   - This feature allows the user to permanently delete the account and saved details, based on the Account Name inputted.
 
-  ![Delete account](readme-images/terminal-delete-an-account.png)
+  ![Delete account](readme-images/terminal-delete-account.png)
 
 - __Option 6: Exit Application__
 
