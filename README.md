@@ -14,57 +14,15 @@ This program stores all kinds of login details, any type account and any type of
 
 ## Features
 
-- Password Manager, including:
-  - Retrieve all Login Details.
-  - Add new Login Details.
-  - Retrieve specific Login Details.
-  - Update Login Details.
-  - Delete Login Details.
-
-![Main Menu](readme-images/termina-main-menu.png)
-
-## Libraries 
-
-- Gspred.
-- Google-Auth(Credentials class only).
-
-## Deployment
-
-- The application was deployed to Heroku, steps are as follows:
-  - Prepare requirements.txt file using pip freeze > requires.txt.
-  - Create a new app in Heroku.
-  - Change the settings:
-    - Add sensitive information to Config Vars.
-    - Add necessary BuildPacks.
-  - Go to deploy and connect to Github account.
-  - Select deployment (Automatic or Manual) We used Automatic for this project.
-
-The live deployed project can be found here - 
-
-## Creation process
-
-![Flow Chart](readme-images/flow-chart-passwordmanager.png)
-
-## Content
-
-- The content was created by Bruna Ribeiro, myself.
-- The Login details are fictitious.
-- The code not teached in Code instutite that was used in this project was taken and learned from [StackOverflow](https://stackoverflow.com).
-- Flow-chart was made with [Lucid App]()
-
-## Testing
-
-See below for manual testing with screenshots:
-
 - __Main Menu__
 
-  - The main menu greets the user and presents options to continue to use the program. It works as expected.
+  - The main menu greets the user and presents options to continue to use the program.
 
   ![Main Menu](readme-images/termina-main-menu.png)
 
 - __Option 1: View all saved accounts__
 
-  - The funtion works as expected
+  - This feature lets the user retrieve all the stored accounts from the Google Sheet file.
 
   ![View all saved accounts](readme-images/view-all-saved-accounts.png)
 
@@ -119,8 +77,84 @@ See below for manual testing with screenshots:
   ![Exit Application](readme-images/exit-application.png)
 
 
+![Main Menu](readme-images/termina-main-menu.png)
+
+## Libraries 
+
+- Gspred.
+- Google-Auth(Credentials class only).
+
+## Deployment
+
+- The application was deployed to Heroku, steps are as follows:
+  - Prepare requirements.txt file using pip freeze > requires.txt.
+  - Create a new app in Heroku.
+  - Change the settings:
+    - Add sensitive information to Config Vars.
+    - Add necessary BuildPacks.
+  - Go to deploy and connect to Github account.
+  - Select deployment (Automatic or Manual) We used Automatic for this project.
+
+The live deployed project can be found here - 
+
+## Creation process
+
+![Flow Chart](readme-images/flow-chart-passwordmanager.png)
+
+## Content
+
+- The content was created by Bruna Ribeiro, myself.
+- The Login details are fictitious.
+- The code not teached in Code instutite that was used in this project was taken and learned from [StackOverflow](https://stackoverflow.com).
+- Flow-chart was made with [Lucid App]()
+
+## Testing
+
+See below for how the program responds to incorrect or empty inputs:
+- __Main Menu__
+
+  - The main menu greets the user and presents options to continue to use the program.
+
+  ![Main Menu](readme-images/termina-main-menu.png)
+
+- __Option 1: View all saved accounts__
+
+  - Wrong input handling:
+
+  ![View all saved accounts ERROR](readme-images/view-all-saved-account-error.png)
+  
+- __Option 2: Add new account__
+
+  - Wrong input handling:
+
+  ![Add new account ERROR](readme-images/add-new-account-error.png)
+
+- __Option 3: View specific account__
+
+  - Wrong input handling:
+
+  ![View specific account ERROR](readme-images/view-specific-account-error.png)
+  
+- __Option 4: Update account__
+
+  - Wrong input handling:
+
+  ![Update account ERROR](readme-images/update-account-error.png)
+
+- __Option 5: Delete an account__
+
+  - Wrong input handling:
+
+  ![Delete account ERROR](readme-images/delete-an-account-error.png)
+
+
+
 ## Validator Testing and Other Tests
-- [Python 3 Style Checker for beginners](https://www.codewof.co.nz/style/python3/)
+
+- [CI Python Linter](https://pep8ci.herokuapp.com/) - NO ERRORS FOUND
+  ![CI Python Linter](readme-images/ci-python-linter.png)
+
+- [Python 3 Style Checker for beginners](https://www.codewof.co.nz/style/python3/) - NO ERRORS FOUND
   -This style checker will check your code against the main conventions recommended for Python in PEP 8 (Style Guide for Python Code) and PEP 257 (Docstring Conventions). Fine tuning your code to pass these common conventions makes it easy for others to read your Python code.
 
 
