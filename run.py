@@ -107,19 +107,21 @@ class PasswordManager:
             for account in data:
                 if account['Account Name'] == account_name:
                     if new_username == '' or new_password == '':
-                        raise ValueError("Username and Password must not be empty. ")
+                        raise ValueError("Account details can not be empty. ")
                     elif new_username and new_password:
                         self.sheet.delete_rows(data.index(account) + 2)
                         data = [[account_name, new_username, new_password]]
                         self.sheet.append_rows(data)
-                        print(f"\n{account_name}'s account updated successfully.")
+                        print(f"\n{account_name}'s account was updated")
                         return True
-            raise ValueError(f"'{account_name}'s' account not found or not updated. ")
+            raise ValueError("Account not found or not updated")
         except ValueError as e:
-            print(f"\nError: {e}Please try again.\n")
-            print("NOTE:\n -This application is case sensitive, you must write")
-            print("the Account Name exactly as you wrote when you first Added it.")
-            print("-If either Username or Password remains unchanged, reenter the same.")
+            print(f"\n Error: {e} Please try again.\n")
+            print("NOTE:\n -This application is case sensitive.")
+            print("You must provide the Account Name exactly as you wrote")
+            print("when the account was added.")
+            print("-If either the Username or Password remains the same,")
+            print("You must provide it anyways. It can not be empty.")
             return False
 
     def delete_account(self, account_name):
