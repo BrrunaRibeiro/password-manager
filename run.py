@@ -78,10 +78,16 @@ class PasswordManager:
         try:
             data = self.sheet.get_all_records()
             account_name = account_name.strip()
+            matching_accounts = []
+
             for account in data:
-                if account.get('Account Name', '').strip() == account_name:
+                if 'Account Name' in account and account['Account Name'].strip() == account_name:
+                    matching_accounts.append(account)
+
+            if matching_accounts:
+                for account in matching_accounts:
                     print(account)
-                    return True
+                return True
             raise ValueError(f"\n '{account_name}'s' account not found. ")
         except ValueError as e:
             print(f"\nError:{e}Did you mean {account_name} in capital letter?")
@@ -113,7 +119,7 @@ class PasswordManager:
             raise ValueError(f"'{account_name}'s' account not found or not updated. ")
         except ValueError as e:
             print(f"\nError: {e}Please try again.\n")
-            print("NOTE:\n-This application is case sensitive, you must write")
+            print("NOTE:\n -This application is case sensitive, you must write")
             print("the Account Name exactly as you wrote when you first Added it.")
             print("-If either Username or Password remains unchanged, reenter the same.")
             return False
