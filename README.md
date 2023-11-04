@@ -72,7 +72,7 @@ Regardless of the Account provider or device's brands(Apple/Samsung/Windows, Goo
   - Go to deploy and connect to Github account.
   - Select deployment (Automatic or Manual). We used Automatic for this project.
 
-__The live deployed project can be found here - []()__
+__The live deployed project can be found here - [Password Manager](https://password-managerr-ea1ade2cc63c.herokuapp.com/)__
 
 ## Creation process
 
