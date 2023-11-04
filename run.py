@@ -79,11 +79,9 @@ class PasswordManager:
             data = self.sheet.get_all_records()
             account_name = account_name.strip()
             matching_accounts = []
-
             for account in data:
-                if 'Account Name' in account and account['Account Name'].strip() == account_name:
+                if account.get('Account Name', '').strip() == account_name:
                     matching_accounts.append(account)
-
             if matching_accounts:
                 for account in matching_accounts:
                     print(account)
