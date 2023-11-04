@@ -161,12 +161,16 @@ I seached for a solution both online and with Code Institute Tutors, they advise
 
 SOLUTION: As an alternative, the account to be updated is first DELETED and then ADDED with the newest data. The code now behaves as expected.
 
+- If you request to see an Specific account that was added twice, it only returns the first found row in the sheet.
+  - Solution: Store all matching accounts in a list before printing it.
+
 ## Unfixed bugs
 
-- If you request to see an Specific account that was added twice, it only returns the first found row in the sheet.
+- None.
 
 ## Features to add in the future
 
 - New random password generation.
 - Import Colorama for a better view and usage.
 - Security features such as Master Password or Multi-factor Authentication to access the program.
+- Import Fernet(cryptography) for Security.
