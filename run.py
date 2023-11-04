@@ -102,14 +102,20 @@ class PasswordManager:
             account_name = account_name.strip()
             for account in data:
                 if account['Account Name'] == account_name:
-                    self.sheet.delete_rows(data.index(account) + 2)
-                    data = [[account_name, new_username, new_password]]
-                    self.sheet.append_rows(data)
-                    print(f"\n{account_name}'s account updated successfully.")
-                    return True
-            raise ValueError(f"\n '{account_name}'s' account not found. ")
+                    if new_username == '' or new_password == '':
+                        raise ValueError("Username and Password must not be empty. ")
+                    elif new_username and new_password:
+                        self.sheet.delete_rows(data.index(account) + 2)
+                        data = [[account_name, new_username, new_password]]
+                        self.sheet.append_rows(data)
+                        print(f"\n{account_name}'s account updated successfully.")
+                        return True
+            raise ValueError(f"'{account_name}'s' account not found or not updated. ")
         except ValueError as e:
-            print(f"\nError:{e} Try '{account_name}' in capital letter\n")
+            print(f"\nError: {e}Please try again.\n")
+            print("NOTE:\n-This application is case sensitive, you must write")
+            print("the Account Name exactly as you wrote when you first Added it.")
+            print("-If either Username or Password remains unchanged, reenter the same.")
             return False
 
     def delete_account(self, account_name):
